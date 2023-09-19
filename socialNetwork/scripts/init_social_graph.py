@@ -16,6 +16,7 @@ async def upload_follow(session, addr, user_0, user_1):
 async def upload_register(session, addr, user):
   payload = {'first_name': 'first_name_' + user, 'last_name': 'last_name_' + user,
              'username': 'username_' + user, 'password': 'password_' + user, 'user_id': user}
+  print(payload)
   async with session.post(addr + '/wrk2-api/user/register', data=payload) as resp:
     return await resp.text()
 
@@ -133,7 +134,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--graph', help='Graph name. (`socfb-Reed98`, `ego-twitter`, or `soc-twitter-follows-mun`)', default='socfb-Reed98')
   parser.add_argument(
-      '--ip', help='IP address of socialNetwork NGINX web server. ', default='127.0.0.1')
+      '--ip', help='IP address of socialNetwork NGINX web server. ', default='10.106.183.196')
   parser.add_argument(
       '--port', help='IP port of socialNetwork NGINX web server.', default=8080)
   parser.add_argument('--compose', action='store_true',
@@ -141,9 +142,9 @@ if __name__ == '__main__':
   parser.add_argument('--limit', type=int, help='total number simultaneous connections', default=200)
   args = parser.parse_args()
 
-  with open(os.path.join('datasets/social-graph', args.graph, f'{args.graph}.nodes'), 'r') as f:
+  with open(os.path.join('/home/vm_test/DeathStarBench/socialNetwork/datasets/social-graph', args.graph, f'{args.graph}.nodes'), 'r') as f:
     nodes = getNumNodes(f)
-  with open(os.path.join('datasets/social-graph', args.graph, f'{args.graph}.edges'), 'r') as f:
+  with open(os.path.join('/home/vm_test/DeathStarBench/socialNetwork/datasets/social-graph', args.graph, f'{args.graph}.edges'), 'r') as f:
     edges = getEdges(f)
 
   random.seed(1)   # deterministic random numbers
