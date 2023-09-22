@@ -47,7 +47,7 @@ http {
 
   # Docker default hostname resolver. Set valid timeout to prevent unlimited
   # ttl for resolver caching.
-  # resolver 127.0.0.11 valid=10s ipv6=off;
+  # resolver 10.96.0.10 valid=10s ipv6=off;
   resolver {{ .Values.global.nginx.resolverName }} valid=10s ipv6=off;
 
   lua_package_path '/usr/local/openresty/nginx/lua-scripts/?.lua;/usr/local/openresty/luajit/share/lua/5.1/?.lua;;';

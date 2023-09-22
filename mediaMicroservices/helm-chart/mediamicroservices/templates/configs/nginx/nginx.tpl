@@ -42,7 +42,7 @@ http {
   keepalive_requests 100000;
 
   # Docker default hostname resolver
-  # resolver 127.0.0.11 ipv6=off;
+  # resolver 10.96.0.10 ipv6=off;
 
   # Kubernetes default hostname resolver
   resolver {{ .Values.global.nginx.resolverName }} ipv6=off;
