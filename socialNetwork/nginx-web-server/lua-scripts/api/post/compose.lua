@@ -63,7 +63,7 @@ function _M.ComposePost()
   else
     local status, ret
     local client = GenericObjectPool:connection(
-      ComposePostServiceClient, "compose-post-service" .. k8s_suffix, 9090)
+      ComposePostServiceClient, "compose-post-service.default.svc.cluster.local" .. k8s_suffix, 9090)
 
     local span = tracer:start_span("compose_post_client",
       { ["references"] = { { "child_of", parent_span_context } } })
