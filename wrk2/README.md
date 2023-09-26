@@ -344,7 +344,7 @@
 
     wrk = {
       scheme  = "http",
-      host    = "localhost",
+      host    = "nginx-thrift.social-network.svc.cluster.local",
       port    = nil,
       method  = "GET",
       path    = "/",
