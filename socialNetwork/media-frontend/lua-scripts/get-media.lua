@@ -1,7 +1,7 @@
 local _M = {}
 local k8s_suffix = os.getenv("fqdn_suffix")
 if (k8s_suffix == nil) then
-  k8s_suffix = ""
+  k8s_suffix = ".social-network.svc.cluster.local"
 end
 
 local function _StrIsEmpty(s)

@@ -1,7 +1,7 @@
 local _M = {}
 local k8s_suffix = os.getenv("fqdn_suffix")
 if (k8s_suffix == nil) then
-  k8s_suffix = ""
+  k8s_suffix = ".social-network.svc.cluster.local"
 end
 
 local function _StrIsEmpty(s)
@@ -77,7 +77,7 @@ function _M.ReadUserTimeline()
 
 
   local client = GenericObjectPool:connection(
-      UserTimelineServiceClient, "user-timeline-service.social-network.svc.cluster.local" .. k8s_suffix, 9090)
+      UserTimelineServiceClient, "user-timeline-service" .. k8s_suffix, 9090)
   local status, ret = pcall(client.ReadUserTimeline, client, req_id,
       tonumber(args.user_id), tonumber(args.start), tonumber(args.stop), carrier)
   if not status then
