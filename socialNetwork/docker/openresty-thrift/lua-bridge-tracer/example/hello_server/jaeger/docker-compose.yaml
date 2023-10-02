@@ -26,10 +26,10 @@ services:
           - jaeger
     expose:
       - "9411"
-      - "16686"
+      - "16685"
     ports:
       - "9411:9411"
-      - "16686:16686"
+      - "16685:16685"
 
 networks:
   hello_example: {}

@@ -1,7 +1,7 @@
 disabled: false
 reporter:
   logSpans: false
-  localAgentHostPort: "jaeger-agent.social-network.svc.cluster.local:16686"
+  localAgentHostPort: "jaeger-agent.social-network.svc.cluster.local:16685"
   queueSize: 1000000
   bufferFlushInterval: 10
 sampler:
