@@ -1,7 +1,7 @@
 disabled: false
 reporter:
   logSpans: false
-  localAgentHostPort: "jaeger-agent.social-network.svc.cluster.local:16686"
+  localAgentHostPort: "127.0.0.1:16685"
 sampler:
   type: const
   param: 1

@@ -3,7 +3,7 @@
   "diabled": false,
   "reporter": {
     "logSpans": true,
-    "localAgentHostPort": "jaeger-agent.social-network.svc.cluster.local:16686"
+    "localAgentHostPort": "jaeger-agent.social-network.svc.cluster.local:16685"
   },
   "sampler": {
     "type": "const",
