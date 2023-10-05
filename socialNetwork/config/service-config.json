@@ -93,7 +93,7 @@
     "binary_protocol": 1
   },
   "ssl": {
-    "serverKeyPath": "/keys/server.key.social-network.svc.cluster.local",
+    "serverKeyPath": "/keys/server.key",
     "caPath": "/keys/CA.pem",
     "enabled": false,
     "serverCertPath": "/keys/server.crt",
