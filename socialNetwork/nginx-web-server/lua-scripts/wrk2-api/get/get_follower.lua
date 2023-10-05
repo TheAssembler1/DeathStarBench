@@ -1,5 +1,5 @@
 local _M = {}
-
+local k8s_suffix = ".social-network.svc.cluster.local"
 local function _StrIsEmpty(s)
   return s == nil or s == ''
 end
@@ -36,7 +36,7 @@ function _M.GetFollower()
   if false then
   else
     local client = GenericObjectPool:connection(
-      SocialGraphServiceClient, "social-graph-service", 9090)
+      SocialGraphServiceClient, "social-graph-service" .. k8s_suffix, 9090)
     local status, ret = pcall(client.GetFollowers, client, req_id,
         user_id, carrier)
     GenericObjectPool:returnConnection(client)

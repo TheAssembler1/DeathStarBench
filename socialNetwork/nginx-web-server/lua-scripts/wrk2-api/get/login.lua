@@ -1,5 +1,5 @@
 local _M = {}
-
+local k8s_suffix = ".social-network.svc.cluster.local"
 local function _StrIsEmpty(s)
   return s == nil or s == ''
 end
@@ -23,7 +23,7 @@ function _M.Login()
     ngx.exit(ngx.HTTP_BAD_REQUEST)
   end
 
-  local client = GenericObjectPool:connection(UserServiceClient, "user-service", 9090)
+  local client = GenericObjectPool:connection(UserServiceClient, "user-service" .. k8s_suffix, 9090)
 
   local status, ret = pcall(client.Login, client, req_id,
       args.username, args.password, carrier)
